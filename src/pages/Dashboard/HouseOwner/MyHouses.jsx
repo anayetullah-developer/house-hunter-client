@@ -7,7 +7,7 @@ const MyHouses = () => {
   console.log(myHouses);
 
   const handleDelete = (id) => {
-    axios.delete(`/student/selectedClass/${id}`)
+    axios.delete(`http://localhost:5000/my-houses/selected-house/${id}`)
     .then((result) => {
       if (result.data.deletedCount > 0) {
         console.log(result);
