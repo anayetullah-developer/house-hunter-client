@@ -3,7 +3,7 @@ import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 
 const AddHouse = () => {
-  const { user} = useAuth();
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -13,103 +13,103 @@ const AddHouse = () => {
 
   const onSubmit = async (data) => {
     reset();
-    const response = await axios.post("/instructor/addClass", {
-       ...data
-    })
+    const response = await axios.post("http://localhost:5000/house-owner/addHouse", {
+      ...data,
+    });
     console.log(response);
   };
   return (
-    <div className="w-3/5 md:mx-auto py-10">
-      <h2 className="text-center text-5xl mb-10">Add A Class</h2>
+    <div className="container py-5">
+      <h2 className="text-center display-4 mb-4">Add A Class</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Instructor Name</span>
+        <div className="mb-3">
+          <label htmlFor="instructorName" className="form-label">
+            Instructor Name
           </label>
           <input
             type="text"
             {...register("instructorName", { required: true })}
             placeholder="Instructor Name"
             value={user?.displayName}
-            className="input input-bordered"
+            className="form-control"
           />
-          {errors.name && (
-            <span className="text-red-600">Instructor Name is required</span>
+          {errors.instructorName && (
+            <span className="text-danger">Instructor Name is required</span>
           )}
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Class Name</span>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Class Name
           </label>
           <input
             type="text"
             {...register("name", { required: true })}
             placeholder="Class Name"
-            className="input input-bordered"
+            className="form-control"
           />
           {errors.name && (
-            <span className="text-red-600">Class Name is required</span>
+            <span className="text-danger">Class Name is required</span>
           )}
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Class Image</span>
+        <div className="mb-3">
+          <label htmlFor="photoURL" className="form-label">
+            Class Image
           </label>
           <input
             type="url"
             {...register("photoURL", { required: true })}
             placeholder="Image URL"
-            className="input input-bordered"
+            className="form-control"
           />
           {errors.photoURL && (
-            <span className="text-red-600">Class Image is required</span>
+            <span className="text-danger">Class Image is required</span>
           )}
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email
           </label>
           <input
             type="email"
             {...register("email", { required: true })}
             placeholder="Email"
-            className="input input-bordered"
+            className="form-control"
             value={user?.email}
           />
           {errors.email && (
-            <span className="text-red-600">Email is required</span>
+            <span className="text-danger">Email is required</span>
           )}
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Available Seats</span>
+        <div className="mb-3">
+          <label htmlFor="seats" className="form-label">
+            Available Seats
           </label>
           <input
             type="number"
             {...register("seats", { required: true })}
             placeholder="Available Seats"
-            className="input input-bordered"
+            className="form-control"
           />
           {errors.seats && (
-            <span className="text-red-600">Seats is required</span>
+            <span className="text-danger">Seats is required</span>
           )}
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Price</span>
+        <div className="mb-3">
+          <label htmlFor="price" className="form-label">
+            Price
           </label>
           <input
             type="number"
             {...register("price", { required: true })}
             placeholder="Price"
-            className="input input-bordered"
+            className="form-control"
           />
           {errors.price && (
-            <span className="text-red-600">Price is required</span>
+            <span className="text-danger">Price is required</span>
           )}
         </div>
 
-        <div className="form-control mt-6">
+        <div className="mt-4">
           <input className="btn btn-primary" type="submit" value="Add Class" />
         </div>
       </form>

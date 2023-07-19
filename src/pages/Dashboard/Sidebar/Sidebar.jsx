@@ -13,10 +13,10 @@ const Sidebar = () => {
         {!user ? <></> : user.role === "house-owner" ? (
           <>
             <li className="list-group-item">
-              <Link to="/dashboard/instructors/add-class">Add A House</Link>
+              <Link to="/dashboard/house-owner/add-house">Add A House</Link>
             </li>
             <li className="list-group-item">
-              <Link to="/dashboard/instructors/my-classes">My Houses</Link>
+              <Link to="/dashboard/house-owner/my-houses">My Houses</Link>
             </li>
           </>
         ) : (

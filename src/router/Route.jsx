@@ -4,6 +4,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Main from "../layouts/Main";
 import Dashboard from "../layouts/Dashboard";
+import AddHouse from "../pages/Dashboard/HouseOwner/AddHouse";
+import MyHouses from "../pages/Dashboard/HouseOwner/MyHouses";
 
 export const router = createBrowserRouter([
   {
@@ -17,10 +19,6 @@ export const router = createBrowserRouter([
       },
       
       {
-        path: "login",
-        element: <Login/>
-      },
-      {
         path: "register",
         element: <Register/>
       }
@@ -32,7 +30,7 @@ export const router = createBrowserRouter([
           path: "dashboard",
           element: <Dashboard />,
           errorElement: <ErrorPage />,
-          // children: [
+          children: [
           //   {
           //     path: "student/enrolled-classes",
           //     element: <EnrolledClasses />,
@@ -52,14 +50,14 @@ export const router = createBrowserRouter([
           //       fetch(`https://summer-camp-server-teal.vercel.app/student/payment/${params.id}`),
           //   },
             
-          //   {
-          //     path: "instructors/add-class",
-          //     element: <InstructorRoute><AddClass /></InstructorRoute>,
-          //   },
-          //   {
-          //     path: "instructors/my-classes",
-          //     element: <InstructorRoute><MyClasses /></InstructorRoute>,
-          //   },
+            {
+              path: "house-owner/add-house",
+              element: <AddHouse/>,
+            },
+            {
+              path: "house-owner/my-houses",
+              element: <MyHouses />
+            },
       
           //   {
           //     path: "instructor/myClasses/:id",
@@ -68,21 +66,8 @@ export const router = createBrowserRouter([
           //     fetch(`https://summer-camp-server-teal.vercel.app/instructor/myClasses/${params.id}`),
           //   },
       
-          //   {
-          //     path: "admin/manage-users",
-          //     element: <AdminRoute><ManageUsers /></AdminRoute>,
-          //   },
-          //   {
-          //     path: "admin/manage-classes",
-          //     element: <AdminRoute><MangeClasses /></AdminRoute>,
-          //   },
-          //   {
-          //     path: "admin/manage-users/feedback/:id",
-          //     element: <AdminRoute><Feedback /></AdminRoute>,
-          //     loader: ({ params }) =>
-          //       fetch(`https://summer-camp-server-teal.vercel.app/instructor/myClasses/${params.id}`),
-          //   },
-          // ],
+          // 
+          ],
         },
 
 ]);

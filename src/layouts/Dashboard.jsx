@@ -2,6 +2,7 @@
 // import Sidebar from "../Pages/Components/DashboardComponents/Sidebar";
 // import DashboardNavbar from "../Pages/Components/DashboardComponents/DashboardNavbar";
 
+import { Outlet } from "react-router-dom";
 import DashboardNavbar from "../pages/Dashboard/DashboardNavbar/DashboardNavbar";
 import Sidebar from "../pages/Dashboard/Sidebar/Sidebar";
 
@@ -45,7 +46,7 @@ const Dashboard = () => {
             </nav>
             {/* Page content here */}
             <div className="p-3">
-              {/* <Outlet /> */}
+              <Outlet />
             </div>
           </div>
         </div>
