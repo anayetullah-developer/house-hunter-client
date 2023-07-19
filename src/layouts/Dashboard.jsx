@@ -2,17 +2,20 @@
 // import Sidebar from "../Pages/Components/DashboardComponents/Sidebar";
 // import DashboardNavbar from "../Pages/Components/DashboardComponents/DashboardNavbar";
 
+import DashboardNavbar from "../pages/Dashboard/DashboardNavbar/DashboardNavbar";
+import Sidebar from "../pages/Dashboard/Sidebar/Sidebar";
+
 const Dashboard = () => {
   return (
     <div>
       <div className="container-fluid">
         <div className="row">
           {/* Sidebar */}
-          <div className="col-lg-2 col-md-3 bg-light">
-            {/* <Sidebar /> */}
+          <div className="col-lg-3 col-md-3 bg-light">
+          <Sidebar/>
           </div>
           {/* Main content */}
-          <div className="col-lg-10 col-md-9">
+          <div className="col-lg-19 col-md-9">
             {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <button
@@ -37,7 +40,7 @@ const Dashboard = () => {
                     </a>
                   </li>
                 </ul>
-                {/* <DashboardNavbar /> */}
+                <DashboardNavbar />
               </div>
             </nav>
             {/* Page content here */}
