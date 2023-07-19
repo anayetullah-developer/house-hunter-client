@@ -7,6 +7,7 @@ import Dashboard from "../layouts/Dashboard";
 import AddHouse from "../pages/Dashboard/HouseOwner/AddHouse";
 import MyHouses from "../pages/Dashboard/HouseOwner/MyHouses";
 import UpdateHouse from "../pages/Dashboard/HouseOwner/UpdateHouse";
+import Home from "../pages/Home/Home";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,12 @@ export const router = createBrowserRouter([
     element: <Main />,
     errorElement: <ErrorPage />,
     children: [
+
+      {
+        path: "/",
+        element: <Home/>
+      },
+
       {
         path: "login",
         element: <Login/>

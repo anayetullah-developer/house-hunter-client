@@ -5,6 +5,7 @@ import axios from "axios";
 const UpdateHouse = () => {
   const updateClassInfo = useLoaderData();
   const { name, photoURL, instructorName, price, email, seats, _id } = updateClassInfo;
+  console.log(_id);
 
   const {
     register,
@@ -15,7 +16,7 @@ const UpdateHouse = () => {
 
   const onSubmit = async (data) => {
     reset();
-    const response = await axios.patch(`/instructor/updateClass/${_id}`, {
+    const response = await axios.patch(`http://localhost:5000/house-owner/updateHouse/${_id}`, {
       ...data,
     });
     console.log(response);
