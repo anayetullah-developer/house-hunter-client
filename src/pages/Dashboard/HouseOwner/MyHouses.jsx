@@ -55,7 +55,7 @@ const MyHouses = () => {
                   <td>{myHouse.seats}</td>
                   <td>{myHouse.feedback ? myHouse.feedback : "No feedback"}</td>
                   <td >
-                    <Link to={`/dashboard/instructor/MyHouses/${myHouse._id}`}>
+                    <Link to={`/dashboard/house-owner/MyHouses/${myHouse._id}`}>
                       <button className="btn btn-sm btn-primary">Update</button>
                     </Link>
                     <button className="btn btn-primary btn-sm mt-2" onClick={() => handleDelete(myHouse._id)}>

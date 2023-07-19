@@ -6,6 +6,7 @@ import Main from "../layouts/Main";
 import Dashboard from "../layouts/Dashboard";
 import AddHouse from "../pages/Dashboard/HouseOwner/AddHouse";
 import MyHouses from "../pages/Dashboard/HouseOwner/MyHouses";
+import UpdateHouse from "../pages/Dashboard/HouseOwner/UpdateHouse";
 
 export const router = createBrowserRouter([
   {
@@ -59,14 +60,14 @@ export const router = createBrowserRouter([
               element: <MyHouses />
             },
       
-          //   {
-          //     path: "instructor/myClasses/:id",
-          //     element: <InstructorRoute><UpdateClass /></InstructorRoute>,
-          //     loader: ({ params }) =>
-          //     fetch(`https://summer-camp-server-teal.vercel.app/instructor/myClasses/${params.id}`),
-          //   },
+            {
+              path: "house-owner/myHouses/:id",
+              element: <UpdateHouse />,
+              loader: ({ params }) =>
+              fetch(`http://localhost:5000/house-owner/myHouses/${params.id}`),
+            },
       
-          // 
+          
           ],
         },
 
