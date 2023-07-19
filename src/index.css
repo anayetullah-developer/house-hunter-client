@@ -52,6 +52,10 @@ a {
   background-color: #181D4E!important;
 }
 
+.navbar-bg {
+  background-color: #1F3B95;
+}
+
 .bg-secondary {
   background-color: #12AEE0  !important;
 }
@@ -60,7 +64,7 @@ a {
 }
 
 .bg-tertiary {
-  background-color:  #44C97D !important;;
+  background-color:  #4b8ef37a !important;;
 }
 .bg-tertiary-subtle {
   background-color:  #90fcbf !important;;
@@ -91,7 +95,7 @@ a {
 
 .btn-solid-primary {
   border: none;
-  background-color: #12AEE0;
+  background-color: #116ad6;
   color: white;
   font-weight: 700;
   font-size: 15px;
@@ -100,11 +104,11 @@ a {
 }
 
 .btn-solid-primary:hover {
-  background-color: #0691c0;
+  background-color: #0a5bbe;
 }
 
 .btn-solid-primary:active {
-  background-color: #0691c0 !important;
+  background-color: #166acf !important;
 }
 
 .btn-solid-secondary {
@@ -145,9 +149,6 @@ a {
   color: #E35640;
 }
 
-.navbar-bg {
-  background-color: transparent !important;
-}
 
 .navlink {
   font-size: 16px;
@@ -159,7 +160,7 @@ a {
 }
 
 .navlink:hover{
-    border-bottom: 2px solid #181D4E;
+    border-bottom: 2px solid #fff;
   }
 
 .profile-picture {

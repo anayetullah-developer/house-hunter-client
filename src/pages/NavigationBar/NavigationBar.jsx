@@ -15,14 +15,13 @@ const NavigationBar = () => {
 
   return (
     <>
-      <Navbar bg="light" className="navbar-bg" expand="lg">
+      <Navbar className="navbar-bg" expand="lg">
         <Container>
           <Navbar.Brand href="#">
             <h2 className="m-0">
-              <span className="text-special-color">LegoLand</span>{" "}
-              <span className="text-tertiary">Market</span>
+              <span className="text-white">House Hunter</span>{" "}
             </h2>
-            <p className="text-uppercase tagline">Unleash Your Inner Builder</p>
+            <p className="text-uppercase tagline">Rent a house</p>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -31,43 +30,24 @@ const NavigationBar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "navlink me-md-4 mb-md-0 mb-2 text-primary"
-                    : "navlink me-md-4 mb-md-0 mb-2 text-dark"
+                    ? "navlink me-md-4 mb-md-0 mb-2 text-info"
+                    : "navlink me-md-4 mb-md-0 mb-2 text-white"
                 }
               >
                 Home
               </NavLink>
-              <NavLink
-                to="/all-toys"
-                className={({ isActive }) =>
-                  isActive
-                    ? "navlink me-md-4 mb-md-0 mb-2 text-primary"
-                    : "navlink me-md-4 mb-md-0 mb-2 text-dark"
-                }
-              >
-                All Toys
-              </NavLink>
+
               {user ? (
                 <>
                   <NavLink
-                    to="/my-toys"
+                    to="/dashboard"
                     className={({ isActive }) =>
                       isActive
                         ? "navlink me-md-4 mb-md-0 mb-2 text-primary"
-                        : "navlink me-md-4 mb-md-0 mb-2 text-dark"
+                        : "navlink me-md-4 mb-md-0 mb-2 text-white"
                     }
                   >
-                    My Toys
-                  </NavLink>
-                  <NavLink
-                    to="/add-toy"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "navlink me-md-4 mb-md-0 mb-2 text-primary"
-                        : "navlink me-md-4 mb-md-0 mb-2 text-dark"
-                    }
-                  >
-                    Add a Toy
+                    Dashboard
                   </NavLink>
                 </>
               ) : (
@@ -75,11 +55,21 @@ const NavigationBar = () => {
               )}
 
               <NavLink
-                to="/blogs"
+                to="/about"
                 className={({ isActive }) =>
                   isActive
-                    ? "navlink me-md-4 mb-md-0 mb-2 text-primary"
-                    : "navlink me-md-4 mb-md-0 mb-2 text-dark"
+                    ? "navlink me-md-4 mb-md-0 mb-2 text-info"
+                    : "navlink me-md-4 mb-md-0 mb-2 text-white"
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  isActive
+                    ? "navlink me-md-4 mb-md-0 mb-2 text-info"
+                    : "navlink me-md-4 mb-md-0 mb-2 text-white"
                 }
               >
                 Blog
@@ -88,7 +78,7 @@ const NavigationBar = () => {
             {user ? (
               <>
                 {!user.photoURL ? (
-                  <FaUserTie className="user me-md-3" />
+                  <FaUserTie className="text-white fs-2 me-md-3" />
                 ) : (
                   <Image
                     src={user?.photoURL}

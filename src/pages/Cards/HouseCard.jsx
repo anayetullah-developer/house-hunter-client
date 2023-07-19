@@ -29,7 +29,7 @@ const HouseCard = ({ singleHouse }) => {
           <p className="card-text mb-4">Instructor: {instructorName}</p>
           <div className="d-flex justify-content-between align-items-center">
             <p className="font-weight-bold">Price: ${price}</p>
-            <p className="font-weight-bold">Available Seats: {seats}</p>
+            <p className="font-weight-bold">Seats: {seats}</p>
           </div>
           <button
             disabled={!loading  && user?.role == "house-owner" || convertedSeat === 0}

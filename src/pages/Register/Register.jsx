@@ -164,7 +164,7 @@ const Register = () => {
                 </Form.Group>
                 <Button
                   type="submit"
-                  className="mb-2 bg-white text-tertiary fw-bold border-0"
+                  className="mb-2 bg-white text-secondary fw-bold border-0"
                 >
                   Register
                 </Button>

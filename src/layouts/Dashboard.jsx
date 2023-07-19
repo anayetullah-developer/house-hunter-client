@@ -18,7 +18,7 @@ const Dashboard = () => {
           {/* Main content */}
           <div className="col-lg-19 col-md-9">
             {/* Navbar */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="p-3 navbar-expand navbar-light bg-light">
               <button
                 className="navbar-toggler"
                 type="button"
@@ -43,7 +43,7 @@ const Dashboard = () => {
                 </ul>
                 <DashboardNavbar />
               </div>
-            </nav>
+            </div>
             {/* Page content here */}
             <div className="p-3">
               <Outlet />

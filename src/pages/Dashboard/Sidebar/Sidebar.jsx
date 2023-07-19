@@ -3,14 +3,15 @@ import useAuth from "../../../hooks/useAuth";
 
 const Sidebar = () => {
   const { user } = useAuth();
-  console.log(user)
 
   return (
     <div className="drawer-side">
       <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
 
       <ul className="list-group p-4 w-60 bg-light">
-        {!user ? <></> : user.role === "house-owner" ? (
+        {!user ? (
+          <></>
+        ) : user.role === "house-owner" ? (
           <>
             <li className="list-group-item">
               <Link to="/dashboard/house-owner/add-house">Add A House</Link>
@@ -18,17 +19,29 @@ const Sidebar = () => {
             <li className="list-group-item">
               <Link to="/dashboard/house-owner/my-houses">My Houses</Link>
             </li>
+            <li className="list-group-item">
+              <Link to="/">Home</Link>
+            </li>
           </>
         ) : (
           <>
             <li className="list-group-item">
-              <Link to="/dashboard/student/selected-classes">Selected Classes</Link>
+              <Link to="/dashboard/student/selected-classes">
+                Selected Classes
+              </Link>
             </li>
             <li className="list-group-item">
-              <Link to="/dashboard/student/enrolled-classes">Enrolled Class</Link>
+              <Link to="/dashboard/student/enrolled-classes">
+                Enrolled Class
+              </Link>
             </li>
             <li className="list-group-item">
-              <Link to="/dashboard/student/payment-history">Payment History</Link>
+              <Link to="/dashboard/student/payment-history">
+                Payment History
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link to="/">Home</Link>
             </li>
           </>
         )}

@@ -89,20 +89,10 @@ const Login = () => {
                 </Form.Group>
                 <Button
                   type="submit"
-                  className="mb-2 bg-white text-tertiary border-0 fw-bold"
+                  className="mb-2 bg-white text-secondary border-0 fw-bold"
                 >
                   Login
                 </Button>
-                <div>
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    className="mb-2 btn btn-primary text-white"
-                  >
-                    <FaGoogle /> Login with google
-                  </Button>
-                </div>
-
                 <Form.Text className="ms-2 text-white">
                   Do not have an an account?{" "}
                   <Link
