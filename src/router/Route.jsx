@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
               path: "house-owner/myHouses/:id",
               element: <UpdateHouse />,
               loader: ({ params }) =>
-              fetch(`http://localhost:5000/house-owner/myHouses/${params.id}`),
+              fetch(`http://localhost:5001/house-owner/myHouses/${params.id}`),
             },
       
           

@@ -7,7 +7,7 @@ const MyHouses = () => {
   console.log(myHouses);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/my-houses/selected-house/${id}`)
+    axios.delete(`http://localhost:5001/my-houses/selected-house/${id}`)
     .then((result) => {
       if (result.data.deletedCount > 0) {
         console.log(result);
@@ -19,7 +19,7 @@ const MyHouses = () => {
   return (
     <div>
       <div className="d-flex gap-3 justify-content-center mt-5 align-items-center font-semibold text-uppercase text-2xl">
-        <h1>Total Enrolled Students: {myHouses?.length}</h1>
+        <h1>Total Houses: {myHouses?.length}</h1>
       </div>
 
       <div className="table-responsive mt-5 my-10">
@@ -28,15 +28,18 @@ const MyHouses = () => {
           <thead>
             <tr>
               <th>#</th>
-              <th>Class Name</th>
-              <th>Class Image</th>
-              <th>Instructor</th>
-              <th>Email</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th>Available Seats</th>
-              <th>Feedback</th>
-              <th>Update</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Bedrooms</th>
+              <th>Bathrooms</th>
+              <th>Size</th>
+              <th>Rent</th>
+              <th>Phone</th>
+              <th>Description</th>
+              <th>Action</th>
+
             </tr>
           </thead>
           <tbody>
@@ -44,16 +47,18 @@ const MyHouses = () => {
               return (
                 <tr key={myHouse._id}>
                   <td>{index + 1}</td>
-                  <td>{myHouse.name}</td>
                   <td>
                     <img src={myHouse.photoURL} alt="Class" style={{ maxWidth: "100px", maxHeight: "100px" }} />
                   </td>
-                  <td>{myHouse.instructorName}</td>
-                  <td>{myHouse.email}</td>
-                  <td>${myHouse.price}</td>
-                  <td>{myHouse.status ? myHouse.status : "Pending"}</td>
-                  <td>{myHouse.seats}</td>
-                  <td>{myHouse.feedback ? myHouse.feedback : "No feedback"}</td>
+                  <td>{myHouse.name}</td>
+                  <td>{myHouse.address}</td>
+                  <td>{myHouse.city}</td>
+                  <td>${myHouse.bedrooms}</td>
+                  <td>{myHouse.bathrooms}</td>
+                  <td>{myHouse.size}</td>
+                  <td>{myHouse.rent}</td>
+                  <td>{myHouse.phone}</td>
+                  <td>{myHouse.desc}</td>
                   <td >
                     <Link to={`/dashboard/house-owner/MyHouses/${myHouse._id}`}>
                       <button className="btn btn-sm btn-primary">Update</button>

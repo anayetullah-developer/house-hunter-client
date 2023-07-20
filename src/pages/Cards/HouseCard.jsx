@@ -1,43 +1,85 @@
-import axios from "axios";
+// import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 
 const HouseCard = ({ singleHouse }) => {
  const {user, loading} = useAuth();
  console.log(user?.role);
 
-  const { _id, instructorName, name, photoURL, email, seats, price } = singleHouse;
-  let convertedSeat = parseFloat(seats);
+  const { _id, name, address, phone, photoURL, bedrooms, bathrooms, size, rent, city, date } = singleHouse;
 
-  const handleSelect = async () => {
-    await axios.post("/student/selectedClass", {
-      classId: _id,
-      instructorName,
-      name,
-      photoURL,
-      email,
-      seats,
-      price,
-    });
-  };
-  http://localhost:5000/
+
+  // const handleSelect = async () => {
+  //   await axios.post("/student/selectedClass", {
+  //     classId: _id,
+  //     instructorName,
+  //     name,
+  //     photoURL,
+  //     email,
+  //     seats,
+  //     price,
+  //   });
+  // };
   return (
-    <div className="mb-4">
-      <div className={`card ${convertedSeat < 1 ? "bg-red-300 text-white" : "text-gray-600"}`}>
-        <img className="card-img-top" src={photoURL} alt="Class Image" />
-        <div className="card-body">
-          <h2 className="card-title text-xl font-semibold mb-2">{name}</h2>
-          <p className="card-text mb-4">Instructor: {instructorName}</p>
-          <div className="d-flex justify-content-between align-items-center">
-            <p className="font-weight-bold">Price: ${price}</p>
-            <p className="font-weight-bold">Seats: {seats}</p>
+    <div className="card shadow-lg mb-4">
+      <div className="row no-gutters">
+        <div className="col-md-12">
+          <img
+            src={photoURL}
+            className="card-img"
+            alt="House Image"
+            style={{ height: "250px", objectFit: "cover" }}
+          />
+        </div>
+      </div>
+      <div className="row">
+      <h5 className="text-center mt-2">{name}</h5>
+        <div className="col-md-6">
+          <div className="card-body">
+            <p className="card-text mb-2">
+              <strong>Address:</strong> {address}
+            </p>
+            <p className="card-text mb-2">
+              <strong>City:</strong> {city}
+            </p>
+            <p className="card-text mb-2">
+              <strong>Bedrooms:</strong> {bedrooms}
+            </p>
+            <p className="card-text mb-2">
+              <strong>Bathrooms:</strong> {bathrooms}
+            </p>
+            <p className="card-text">
+              <strong>Size:</strong> {size} sqft
+            </p>
           </div>
-          <button
-            disabled={!loading  && user?.role == "house-owner" || convertedSeat === 0}
-            className={`btn btn-primary mt-3 ${seats === "0" ? "text-white" : "text-gray-700"}`}
-            onClick={handleSelect}
+        </div>
+        <div className="col-md-6">
+          <div className="card-body">
+            <p className="card-text mb-3">
+              <strong>Rent:</strong> ${rent}/month
+            </p>
+            <p className="card-text mb-2">
+              <strong>Phone:</strong> {phone}
+            </p>
+            <p className="card-text">
+              <strong>Date:</strong> {date}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="card-body">
+            <p className="card-text mt-0 pt-0">
+              <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <button
+            disabled={!loading  && user?.role == "house-owner"}
+            className={`btn btn-primary w-full`}
+            // onClick={handleSelect}
           >
             Book
           </button>
+          </div>
         </div>
       </div>
     </div>

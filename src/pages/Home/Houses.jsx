@@ -7,14 +7,14 @@ const Houses = () => {
     const { data: houses = [] } = useQuery({
         queryKey: ['houses'],
         queryFn: async () => {
-            const response = await axios.get(`http://localhost:5000/houses`);
+            const response = await axios.get(`http://localhost:5001/houses`);
             return response.data;
         },
       })
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center display-4 font-weight-bold text-uppercase my-4">Available Houses</h2>
+      <h2 className="text-center display-4 font-weight-bold text-uppercase my-5">Available Houses</h2>
       <div className="row row-cols-1 row-cols-md-3 ">
         {houses.map((singleHouse) => (
           <div key={singleHouse._id} className="col">

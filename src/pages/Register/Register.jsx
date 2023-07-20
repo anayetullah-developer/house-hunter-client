@@ -62,9 +62,9 @@ const Register = () => {
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
+    const phone = form.phone.value;
     const password = form.password.value;
     const userRole = form.role.value;
-    console.log(name, email, userRole, password)
     // const photoURL = form.photo.value;
 
     // if (Emailerror) {
@@ -76,11 +76,12 @@ const Register = () => {
     // }
 
     axios
-      .post("http://localhost:5000/register", {
+      .post("http://localhost:5001/register", {
         name: name,
         email: email,
         password: password,
-        role: userRole
+        role: userRole,
+        phone: phone
       })
       .then((response) => {
         if (response.data.insertedId > 0) {
@@ -132,6 +133,16 @@ const Register = () => {
                     onChange={emailHandler}
                     name="email"
                     placeholder="Enter email"
+                  />
+                  <Form.Text className="text-white">{Emailerror}</Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="4">
+                  <Form.Label className="text-white">Phone Number</Form.Label>
+                  <Form.Control
+                    type="number"
+                    required
+                    name="phone"
+                    placeholder="Enter Phone Number"
                   />
                   <Form.Text className="text-white">{Emailerror}</Form.Text>
                 </Form.Group>

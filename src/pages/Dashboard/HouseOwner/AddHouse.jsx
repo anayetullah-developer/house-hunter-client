@@ -13,47 +13,47 @@ const AddHouse = () => {
 
   const onSubmit = async (data) => {
     reset();
-    const response = await axios.post("http://localhost:5000/house-owner/addHouse", {
+    const response = await axios.post("http://localhost:5001/house-owner/addHouse", {
       ...data,
     });
     console.log(response);
   };
   return (
     <div className="container py-5">
-      <h2 className="text-center display-4 mb-4">Add A Class</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-3">
-          <label htmlFor="instructorName" className="form-label">
-            Instructor Name
-          </label>
-          <input
-            type="text"
-            {...register("instructorName", { required: true })}
-            placeholder="Instructor Name"
-            value={user?.displayName}
-            className="form-control"
-          />
-          {errors.instructorName && (
-            <span className="text-danger">Instructor Name is required</span>
-          )}
-        </div>
+      <h2 className="text-center display-4 mb-4">Add A House</h2>
+      <form onSubmit={handleSubmit(onSubmit)} className="w-75 mx-auto">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            Class Name
+             Name
           </label>
           <input
             type="text"
             {...register("name", { required: true })}
-            placeholder="Class Name"
+            placeholder="Name"
+            value={user?.name}
             className="form-control"
           />
           {errors.name && (
-            <span className="text-danger">Class Name is required</span>
+            <span className="text-danger">Name is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Address
+          </label>
+          <input
+            type="text"
+            {...register("address", { required: true })}
+            placeholder="Address"
+            className="form-control"
+          />
+          {errors.address && (
+            <span className="text-danger">Address is required</span>
           )}
         </div>
         <div className="mb-3">
           <label htmlFor="photoURL" className="form-label">
-            Class Image
+            Image
           </label>
           <input
             type="url"
@@ -62,59 +62,129 @@ const AddHouse = () => {
             className="form-control"
           />
           {errors.photoURL && (
-            <span className="text-danger">Class Image is required</span>
+            <span className="text-danger">Image is required</span>
           )}
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
+          <label htmlFor="city" className="form-label">
+            City
           </label>
           <input
-            type="email"
-            {...register("email", { required: true })}
-            placeholder="Email"
+            type="text"
+            {...register("city", { required: true })}
+            placeholder="City"
             className="form-control"
-            value={user?.email}
           />
-          {errors.email && (
-            <span className="text-danger">Email is required</span>
+          {errors.city && (
+            <span className="text-danger">City is required</span>
           )}
         </div>
         <div className="mb-3">
-          <label htmlFor="seats" className="form-label">
-            Available Seats
-          </label>
-          <input
-            type="number"
-            {...register("seats", { required: true })}
-            placeholder="Available Seats"
-            className="form-control"
-          />
-          {errors.seats && (
-            <span className="text-danger">Seats is required</span>
-          )}
-        </div>
-        <div className="mb-3">
-          <label htmlFor="price" className="form-label">
-            Price
+          <label htmlFor="bedrooms" className="form-label">
+            Bedrooms
           </label>
           <input
             type="number"
-            {...register("price", { required: true })}
-            placeholder="Price"
+            {...register("bedrooms", { required: true })}
+            placeholder="Number of Bedrooms"
             className="form-control"
           />
-          {errors.price && (
-            <span className="text-danger">Price is required</span>
+          {errors.bedrooms && (
+            <span className="text-danger">Bedrooms is required</span>
           )}
         </div>
-
+        <div className="mb-3">
+          <label htmlFor="bathrooms" className="form-label">
+            Bathrooms
+          </label>
+          <input
+            type="number"
+            {...register("bathrooms", { required: true })}
+            placeholder="Number of Bathrooms"
+            className="form-control"
+          />
+          {errors.bathrooms && (
+            <span className="text-danger">Bathrooms is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="size" className="form-label">
+            Room Size
+          </label>
+          <input
+            type="number"
+            {...register("size", { required: true })}
+            placeholder="Size of rooms in foot"
+            className="form-control"
+          />
+          {errors.size && (
+            <span className="text-danger">Size is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="date" className="form-label">
+            Date
+          </label>
+          <input
+            type="date"
+            {...register("date", { required: true })}
+            placeholder="Availability Date"
+            className="form-control"
+          />
+          {errors.size && (
+            <span className="text-danger">Date is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="rent" className="form-label">
+            Rent
+          </label>
+          <input
+            type="number"
+            {...register("rent", { required: true })}
+            placeholder="Rent Per Month"
+            className="form-control"
+          />
+          {errors.rent && (
+            <span className="text-danger">Rent is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="phone" className="form-label">
+            Phone
+          </label>
+          <input
+            type="number"
+            {...register("phone", { required: true })}
+            placeholder="Phone Number"
+            className="form-control"
+          />
+          {errors.phone && (
+            <span className="text-danger">Phone Number is required</span>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="desc" className="form-label">
+            Description
+          </label>
+          <textarea
+            {...register("desc", { required: true })}
+            placeholder="Description"
+            rows="5"
+            className="form-control"
+          ></textarea>
+          {errors.desc && (
+            <span className="text-danger">Description Number is required</span>
+          )}
+        </div>
         <div className="mt-4">
-          <input className="btn btn-primary" type="submit" value="Add Class" />
+          <input className="btn btn-primary" type="submit" value="Add House" />
         </div>
       </form>
     </div>
   );
 };
+
+
 
 export default AddHouse;
