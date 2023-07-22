@@ -76,7 +76,7 @@ const Register = () => {
     // }
 
     axios
-      .post("http://localhost:5001/register", {
+      .post("https://house-hunter-server-alpha.vercel.app/register", {
         name: name,
         email: email,
         password: password,

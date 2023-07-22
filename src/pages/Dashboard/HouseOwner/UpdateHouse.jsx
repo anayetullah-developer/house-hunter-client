@@ -17,7 +17,7 @@ const UpdateHouse = () => {
 
   const onSubmit = async (data) => {
     reset();
-    const response = await axios.patch(`http://localhost:5001/house-owner/updateHouse/${_id}`, {
+    const response = await axios.patch(`https://house-hunter-server-alpha.vercel.app/house-owner/updateHouse/${_id}`, {
       ...data,
     });
     console.log(response);

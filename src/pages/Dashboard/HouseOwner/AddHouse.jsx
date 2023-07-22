@@ -13,7 +13,7 @@ const AddHouse = () => {
 
   const onSubmit = async (data) => {
     reset();
-    const response = await axios.post("http://localhost:5001/house-owner/addHouse", {
+    const response = await axios.post("https://house-hunter-server-alpha.vercel.app/house-owner/addHouse", {
       ...data,
     });
     console.log(response);

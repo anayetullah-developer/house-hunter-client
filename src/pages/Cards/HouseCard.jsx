@@ -5,7 +5,7 @@ const HouseCard = ({ singleHouse }) => {
  const {user, loading} = useAuth();
  console.log(user?.role);
 
-  const { _id, name, address, phone, photoURL, bedrooms, bathrooms, size, rent, city, date } = singleHouse;
+  const { _id, name, address, phone, photoURL, bedrooms, bathrooms, size, rent, city, date, desc } = singleHouse;
 
 
   // const handleSelect = async () => {
@@ -70,7 +70,7 @@ const HouseCard = ({ singleHouse }) => {
         <div className="col-md-12">
           <div className="card-body">
             <p className="card-text mt-0 pt-0">
-              <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <strong>Description:</strong> {desc}
             </p>
             <button
             disabled={!loading  && user?.role == "house-owner"}

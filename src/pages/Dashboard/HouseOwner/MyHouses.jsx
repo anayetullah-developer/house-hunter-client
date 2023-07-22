@@ -7,7 +7,7 @@ const MyHouses = () => {
   console.log(myHouses);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5001/my-houses/selected-house/${id}`)
+    axios.delete(`https://house-hunter-server-alpha.vercel.app/my-houses/selected-house/${id}`)
     .then((result) => {
       if (result.data.deletedCount > 0) {
         console.log(result);

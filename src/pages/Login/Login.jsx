@@ -31,7 +31,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    axios.post("http://localhost:5001/login", {
+    axios.post("https://house-hunter-server-alpha.vercel.app/login", {
         email: email,
         password: password,
       })

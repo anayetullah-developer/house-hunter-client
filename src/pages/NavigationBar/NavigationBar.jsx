@@ -55,7 +55,7 @@ const NavigationBar = () => {
               )}
 
               <NavLink
-                to="/about"
+                to="/about-us"
                 className={({ isActive }) =>
                   isActive
                     ? "navlink me-md-4 mb-md-0 mb-2 text-info"

@@ -10,7 +10,7 @@ const useMyHouses = () => {
         queryKey: ['myHouses'],
         enabled: !loading,
         queryFn: async () => {
-            const response = await axios.get(`http://localhost:5001/house-owner/myHouses?phone=${user?.phone}`);
+            const response = await axios.get(`https://house-hunter-server-alpha.vercel.app/house-owner/myHouses?phone=${user?.phone}`);
             return response.data;
         },
       })

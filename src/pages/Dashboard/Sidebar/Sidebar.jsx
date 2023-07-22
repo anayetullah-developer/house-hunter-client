@@ -27,17 +27,7 @@ const Sidebar = () => {
           <>
             <li className="list-group-item">
               <Link to="/dashboard/student/selected-classes">
-                Selected Classes
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/dashboard/student/enrolled-classes">
-                Enrolled Class
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/dashboard/student/payment-history">
-                Payment History
+                Booked Houses
               </Link>
             </li>
             <li className="list-group-item">

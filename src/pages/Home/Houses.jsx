@@ -7,7 +7,7 @@ const Houses = () => {
     const { data: houses = [] } = useQuery({
         queryKey: ['houses'],
         queryFn: async () => {
-            const response = await axios.get(`http://localhost:5001/houses`);
+            const response = await axios.get(`https://house-hunter-server-alpha.vercel.app/houses`);
             return response.data;
         },
       })

@@ -8,6 +8,8 @@ import AddHouse from "../pages/Dashboard/HouseOwner/AddHouse";
 import MyHouses from "../pages/Dashboard/HouseOwner/MyHouses";
 import UpdateHouse from "../pages/Dashboard/HouseOwner/UpdateHouse";
 import Home from "../pages/Home/Home";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import Blog from "../pages/Blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +31,16 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register/>
+      },
+      {
+        path: "about-us",
+        element: <AboutUs/>
+      },
+      {
+        path: "/blog",
+        element: <Blog/>
       }
+
     ]
   },
 
@@ -71,7 +82,7 @@ export const router = createBrowserRouter([
               path: "house-owner/myHouses/:id",
               element: <UpdateHouse />,
               loader: ({ params }) =>
-              fetch(`http://localhost:5001/house-owner/myHouses/${params.id}`),
+              fetch(`https://house-hunter-server-alpha.vercel.app/house-owner/myHouses/${params.id}`),
             },
       
           
